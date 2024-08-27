@@ -1,0 +1,127 @@
+.card {
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.card-title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+.input-group {
+    display: flex;
+    gap: 10px;
+    input {
+        flex: 1;
+        padding: 10px;
+        border-radius: 4px;
+    }
+    button {
+        padding: 10px 20px;
+        background-color: blue;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        &:hover {
+            background-color: lightskyblue;
+        }
+    }
+}
+.list-group {
+    list-style-type: none;
+    padding: 0;
+
+    li {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        margin-bottom: 10px;
+        .form-check-input {
+            margin-right: 10px;
+        }
+        .btn-danger {
+            padding: 5px 10px;
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            &:hover {
+                background-color: orange;
+            }
+        }
+        .text-decoration-line-through {
+            text-decoration: line-through;
+            color: #999;
+        }
+    }
+}
+.recap-button-container {
+    margin-top: 1.5rem;
+    .recap-button {
+        background-color: blue;
+        color: white;
+        border-radius: 0.25rem;
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        font-weight: 500;
+        cursor: pointer;
+
+        &:hover {
+            background-color: lightskyblue;
+        }
+
+        &:active {
+            background-color: lightblue;
+        }
+    }
+}
+.custom-checkbox {
+    display: none;
+}
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    padding-left: 35px;
+}
+.checkbox-custom {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 3px;
+    border: 2px solid #ccc;
+    transform: translateY(-50%);
+    transition: background-color 0.3s, border-color 0.3s;
+}
+.custom-checkbox:checked+.checkbox-label .checkbox-custom {
+    background-color: blue;
+    border-color: blue;
+}
+.custom-checkbox:checked+.checkbox-label .checkbox-custom::after {
+    content: '';
+    display: block;
+    width: 10px;
+    height: 5px;
+    border: solid white;
+    border-width: 0 0 2px 2px;
+    transform: rotate(-45deg);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+.task-title.completed {
+    text-decoration: line-through;
+    color: grey;
+    font-weight: bold;
+}

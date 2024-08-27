@@ -1,0 +1,26 @@
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">Liste des tâches</h5>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Ajouter une tâche" [(ngModel)]="newTaskTitle" />
+            <button class="btn btn-primary" (click)="addTask()">Ajouter une tâche</button>
+        </div>
+        <ul class="list-group">
+            <li *ngFor="let task of tasks; let i = index"
+                class="list-group-item d-flex justify-content-between align-items-center">
+                <div class="task-item">
+                    <input type="checkbox" id="task-{{i}}" class="custom-checkbox" [checked]="task.completed"
+                        (change)="toggleTaskCompletion(i)" />
+                    <label for="task-{{i}}" class="checkbox-label">
+                        <span class="checkbox-custom"></span>
+                        <span class="task-title" [ngClass]="{ 'completed': task.completed }">{{ task.title }}</span>
+                    </label>
+                </div>
+                <button class="btn btn-danger btn-sm" (click)="deleteTask(i)">Supprimer</button>
+            </li>
+        </ul>
+        <div class="recap-button-container">
+            <button class="recap-button" (click)="navigateToRecap()">Voir le récapitulatif</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+<div class="recap">
+    <div *ngIf="inProgressCount === 0 && completedCount === 0" class="alert alert-warning">
+        Aucune tâche trouvée
+    </div>
+    <div *ngIf="inProgressCount > 0 || completedCount > 0">
+        <h2>Récapitulatif</h2>
+        <p><strong>Tâches en cours :</strong> {{ inProgressCount }}</p>
+        <p><strong>Tâches accomplies :</strong> {{ completedCount }}</p>
+    </div>
+</div>
